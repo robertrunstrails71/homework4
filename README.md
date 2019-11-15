@@ -1,2 +1,2 @@
 # homework4
-Multiple choice quiz pertaing to Alabama football.
+Multiple choice quiz pertaining to Alabama football.
