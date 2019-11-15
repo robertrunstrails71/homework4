@@ -18,7 +18,7 @@ var questions = [
         title: "How many former Alabama players are currently in the NFL?",
         choices: ["56", "70", "41", "28"],
         answer: "56"
-    }
+    },
     {
         title: "In year did Nick Saban win his first National Championship with Alabama?",
         choices: ["2001", "2011", "2016", "2009"],
