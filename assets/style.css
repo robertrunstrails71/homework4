@@ -4,7 +4,7 @@
 
 
 html,body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fantasy', sans-serif;
     height:100%;
   }
   
@@ -36,7 +36,7 @@ html,body{
   }
   
   #controls{
-    background-color: #41275e;
+    background-color: rgb(177, 4, 4);
   }
   
   
@@ -56,7 +56,7 @@ html,body{
     /* position:absolute; */
     /* top:16px; */
     left:40px;
-    background-color: #834bc2;
+    background-color: #330606;
     color: white;
   }
   
@@ -72,7 +72,7 @@ html,body{
   
   
   button{
-    background-color:#41275e;
+    background-color:#aa0909;
     color:white;
     border: none;
     padding:5px;
@@ -81,7 +81,7 @@ html,body{
   }
   
   #intro button:hover{
-    background-color: #613a8d;
+    background-color: #ad0808;
   }
   
   
@@ -91,7 +91,7 @@ html,body{
   
   
   #quizHolder button{
-    background-color:#41275e;
+    background-color:  rgba(194, 12, 12, 0.884);
     border-radius:5px;
     color:white;
     margin: 3px 0;
@@ -103,12 +103,12 @@ html,body{
   }
   
   #quizHolder button:hover{
-    background-color: #613a8d;
+    background-color: #692929;
   }
   
   #scoreIndicator, #errorIndicator{
     border-top: 1px solid #999;
-    color: #41275e;
+    color: #521d1d;
     font-size: 1.3em;
     margin: 0;
     font-style: italic;
