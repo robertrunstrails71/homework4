@@ -120,16 +120,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	//////////////////// QUIZ CONTROLS ////////////////////
 
-	// Create an array of selected divs so I can refer to them with the this keyword and replace their values to then check against the answer property for all questions.
+	
 	Array.from(answers).forEach(check => {
 		check.addEventListener('click', function (event) {
-			// Handles events if a question is answered correctly
+			// Handles events if question is answered correctly
 			if (this.innerHTML.substring(3, this.length) === questions[qCount].answer) {
 				score = score + 1;
 				qCount = qCount + 1;
 				quizUpdate("Correct");
 			}else{
-				// Handles events if a question is answered incorrectly.
+				// Handles events if incorrect answer is given
 				time = time - 10;
 				qCount = qCount + 1;
 				quizUpdate("Wrong");
@@ -160,12 +160,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			queryElement('#errorIndicator p').innerHTML = "Maximum of 5 characters allowed.";
 			queryElement('#errorIndicator').classList.remove('invisible', errorIndicator());
 		} else {
-			//Sends value to current array for use now.
+			
 			recordsArray.push({
 				"initialRecord": initialsRecord,
 				"score": score
 			});
-			//Sends value to local storage for later use.
+			
 			localStorage.setItem('recordsArray', JSON.stringify(recordsArray));
 			queryElement('#highScores div').innerHTML = '';
 			onlyDisplaySection("#highScores");
@@ -174,16 +174,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		}
 	});
 
-	//////////////////// HIGH SCORE CONTROL ARRAY/LOCAL STORAGE ////////////////////
+	//////////////////// HIGH SCORE STORAGE ////////////////////
 
-	// Clears highscores from the html, array and localstorage
+	// Clears highscores
 	queryElement("#clearScores").addEventListener("click", () => {
 		recordsArray = [];
 		queryElement('#highScores div').innerHTML = "";
 		localStorage.removeItem('recordsArray');
 	});
 
-	// Resets all quiz settings to the default to replay the quiz
+	// Resets quiz settings
 	queryElement("#reset").addEventListener("click", () => {
 		time = initialTime;
 		score = 0;
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		onlyDisplaySection("#intro");
 	});
 
-	// If a player pushes the view high scores button in the html view then this abdandons all quiz progress and lets them view the high scores.
+	// Displays high scores
 	queryElement("#scores").addEventListener("click", (e) => {
 		e.preventDefault();
 		clearInterval(clock);
