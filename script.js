@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	let timeset;
 	let answers = document.querySelectorAll('#quizHolder button');
 
-	//2. Sets array then if local storage exists it populates it into the array of records.
+	
 	let recordsArray = [];
-	// Retrieve data if it exists or keep empty array otherwise.
+	
 	(localStorage.getItem('recordsArray')) ? recordsArray = JSON.parse(localStorage.getItem('recordsArray')): recordsArray = [];
 
 	//////////////////// FUNCTIONS MADE TO REDUCE REPEATED CODE ////////////////////
 
-	// FUNCTION to more quickly call elements less typing means less chance for errors
+	
 	let queryElement = (element) => {
 		return document.querySelector(element);
 	}
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		queryElement('#quizHolder button:nth-of-type(4)').innerHTML = `4. ${questions[qCount].choices[3]}`;
 	}
 
-	//FUNCTION changes the question and has a parameter to control the text which is provided weather it is correct or wrong
+	
 	let quizUpdate = (answerCopy) => {
 		queryElement('#scoreIndicator p').innerHTML = answerCopy;
 		queryElement('#scoreIndicator').classList.remove('invisible', scoreIndicator());
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			answer.classList.add('disable');
 		});
 
-		// If all the questions have been answered exist the quiz section
+		// If all the questions have been answered exits the quiz section
 		setTimeout(() => {
 			if (qCount === questions.length) {
 				onlyDisplaySection("#finish");
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			} else {
 				// Updates copy in questions with the net array's question text.
 				setQuestionData();
-				// Removed disabled status.
+
 				Array.from(answers).forEach(answer => {
 					answer.classList.remove('disable');
 				});
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	// On intro button click start time and starts giving questions
 	let clock;
 	queryElement("#intro button").addEventListener("click", (e) => {
-		//call above function to set Initial data in questionHolder section
+		
 		setQuestionData();
 		onlyDisplaySection("#quizHolder");
 		clock = setInterval(myTimer, 1000);
 	});
 
-	// Clears timeout if next question is answered before current timeout is reached or if form element has a requirement not met.
+	// Clears timeout 
 
 	let scoreIndicator = () => {
 		clearTimeout(timeset);
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		}, 1000);
 	}
 
-	//////////////////// QUIZ CONTROLS ////////////////////
+	//////////////////// QUIZ CONTROLS /////////////
 
 	
 	Array.from(answers).forEach(check => {
